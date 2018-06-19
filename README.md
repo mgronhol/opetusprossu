@@ -4,43 +4,116 @@ Simppeli prossusimu pythonilla  + GUI Tk:lla
 
 ## Opcodes
 
+**mov** op1, op2
 ```
-  **mov** op1, op2
-  op1: *reg*
-  op2: *reg* or *number*
+  op1: reg
+  op2: reg or number
   op1 = op2
 ```
 
-**load** *reg*, *reg* or *number*
 
-**store** *reg* or *number*, *reg*
+**load** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  op1 = memory[ op2 ]
+```
 
-**push** *reg* or *number*
+**store** op1, op2
+```
+  op1: reg or number
+  op2: reg
+  memory[ op1 ] = op2
+```
 
-**pop** *reg*
+
+**push** op1
+```
+  op1: reg or number
+  push op1 to stack
+```
+
+**pop** op1
+```
+  op1: reg
+  stack top to op1
+```
 
 **label** *label*
+```
+  create jump label
+```
 
-**inc** *reg*
 
-**dec** *reg*
+**inc** op1
+```
+  op1: reg
+  op1 = op1 + 1
+```
 
-**add** *reg*, *reg* or *number*
+**dec** op1
+```
+  op1: reg
+  op1 = op1 - 1
+```
 
-**sub** *reg*, *reg* or *number*
+**add** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  op1 = op1 + op2
+```
 
-**mul** *reg*, *reg* or *number*
+**sub** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  op1 = op1 - op2
+```
 
-**div** *reg*, *reg* or *number*
+**mul** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  op1 = op1 * op2
+```
 
-**cmp** *reg*, *reg* or *number*
+**div** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  op1 = op1 / op2
+```
+
+**cmp** op1, op2
+```
+  op1: reg
+  op2: reg or number
+  compares op1 and op2
+```
 
 **jmp** *label*
+```
+  Uncoonditional jump to label
+```
 
 **je** *label*
+```
+  Jump to label if last compare was equal
+```
 
 **jne** *label*
+```
+ Jump to label if last compare was not equal
+ ```
 
 **jg** *label*
+```
+Jump to label if last compare greater
+```
 
-**out** *reg* or *number*
+**out** op1
+```
+  op1: reg or number
+  send byte to output
+```
